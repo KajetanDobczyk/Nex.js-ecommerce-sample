@@ -1,10 +1,10 @@
 import { render, screen } from '@testing-library/react'
-import { sampleProduct } from 'src/modules/Product/mocks'
+import { mockedProduct } from 'src/modules/Product/mocks'
 
 import ProductTile from '.'
 
 test('Product tile renders correctly', async () => {
-  render(<ProductTile product={sampleProduct} />)
+  render(<ProductTile product={mockedProduct} />)
 
   expect(
     screen.getByRole('heading', { name: /Fjallraven/ }),
