@@ -3,7 +3,7 @@ import { Provider } from 'react-redux'
 
 import store from 'src/config/redux/store'
 
-import '../styles/globals.css'
+import '../styles/reset.css'
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
