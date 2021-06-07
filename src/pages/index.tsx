@@ -3,6 +3,7 @@ import { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 
 import { api } from 'src/api'
+import Layout from 'src/layout'
 import { IProduct } from 'src/modules/Product/interfaces'
 import ProductsList from 'src/modules/Products/containers/ProductsList'
 import { setProducts } from 'src/modules/Products/store/slice'
@@ -23,7 +24,11 @@ const Home: NextPage<Props> = ({ products }) => {
     }
   }, [])
 
-  return <ProductsList />
+  return (
+    <Layout title="Main Page">
+      <ProductsList />
+    </Layout>
+  )
 }
 
 export const getServerSideProps: GetServerSideProps<Props> = async (
