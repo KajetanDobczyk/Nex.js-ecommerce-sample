@@ -3,5 +3,5 @@ import { IProduct } from 'src/modules/Product/interfaces'
 
 export interface IProductsState {
   fetchStatus: FetchStatus
-  data: IProduct[] | null
+  data: IProduct[]
 }
