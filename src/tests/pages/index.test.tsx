@@ -1,10 +1,13 @@
+import { findAllByRole, screen } from '@testing-library/dom'
 import { GetServerSidePropsContext } from 'next'
 
 import { mockedProducts } from 'src/modules/Products/mocks'
-import { getServerSideProps } from 'src/pages/index'
+import Home, { getServerSideProps } from 'src/pages/index'
+
+import { renderWithProviders } from '../test-utils'
 
 describe('Home page', () => {
-  it('getServerSideProps should return products list in props', async () => {
+  test('getServerSideProps should return products list in props', async () => {
     const serverSideProps = await getServerSideProps(
       {} as GetServerSidePropsContext,
     )
@@ -16,5 +19,12 @@ describe('Home page', () => {
         },
       }),
     )
+  })
+
+  test('Page displays all products', async () => {
+    renderWithProviders(<Home products={mockedProducts} />)
+
+    const products = await screen.findAllByRole('listitem')
+    expect(products).toHaveLength(3)
   })
 })
