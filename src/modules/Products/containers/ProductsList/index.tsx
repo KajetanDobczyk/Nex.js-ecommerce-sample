@@ -10,7 +10,7 @@ const ProductsList = () => {
   const products = useSelector(selectProducts)
   const fetchStatus = useSelector(selectProductsFetchStatus)
 
-  if (fetchStatus === 'failed' || !products || !products.length) {
+  if (fetchStatus === 'failed' || !products.length) {
     return <h2>Products not found</h2>
   }
 
