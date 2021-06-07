@@ -13,8 +13,8 @@ describe('Products list', () => {
     renderWithProviders(<ProductsList />)
     store.dispatch(setProducts(mockedProducts))
 
-    const gridButton = screen.getByRole('button', { name: 'Display as grid' })
-    const listButton = screen.getByRole('button', { name: 'Display as list' })
+    const gridButton = screen.getByRole('button', { name: 'Grid' })
+    const listButton = screen.getByRole('button', { name: 'List' })
     const productsList = screen.getByRole('list')
 
     expect(productsList).toHaveStyle({ display: 'grid' })
