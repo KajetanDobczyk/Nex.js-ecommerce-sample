@@ -8,7 +8,7 @@ const Providers: React.FC = ({ children }): ReactElement => (
   <Provider store={store}>{children}</Provider>
 )
 
-const renderWithProviders = (
+export const renderWithProviders = (
   ui: ReactElement,
   options?: RenderOptions,
 ): RenderResult =>
