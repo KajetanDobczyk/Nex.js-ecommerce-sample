@@ -4,7 +4,7 @@ import { mockedProduct } from 'src/modules/Product/mocks'
 import ProductTile from '.'
 
 test('Product tile renders correctly', async () => {
-  render(<ProductTile product={mockedProduct} />)
+  render(<ProductTile product={mockedProduct} isOnGrid={true} />)
 
   expect(
     screen.getByRole('heading', { name: /Fjallraven/ }),

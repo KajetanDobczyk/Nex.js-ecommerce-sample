@@ -1,22 +1,34 @@
 import Link from 'next/link'
 
+import { productImageLoader } from 'src/modules/Product/helpers'
 import { IProduct } from 'src/modules/Product/interfaces'
+
+import * as S from './styles'
 
 type Props = {
   product: IProduct
+  isOnGrid: boolean
 }
 
-const ProductTile: React.FC<Props> = ({ product }) => (
-  <li>
+const ProductTile: React.FC<Props> = ({ product, isOnGrid }) => (
+  <S.ProductTileWrapper isOnGrid={isOnGrid}>
     <Link href={`products/${product.id}`}>
       <a>
-        <h2>{product.title}</h2>
-        <span>${product.price}</span>
-        <p>{product.description}</p>
-        <img src={product.image} alt={product.title} />
+        <S.ProductImageWrapper isOnGrid={isOnGrid}>
+          <S.ProductImage
+            loader={productImageLoader}
+            src={product.image}
+            layout="fill"
+            alt={product.title}
+          />
+        </S.ProductImageWrapper>
+        <S.ProductDetails>
+          <S.ProductTitle>{product.title}</S.ProductTitle>
+          <S.ProductPrice>${product.price}</S.ProductPrice>
+        </S.ProductDetails>
       </a>
     </Link>
-  </li>
+  </S.ProductTileWrapper>
 )
 
 export default ProductTile
