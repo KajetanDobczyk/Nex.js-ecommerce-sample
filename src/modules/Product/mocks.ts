@@ -1,6 +1,6 @@
 import { IProduct } from './interfaces'
 
-export const sampleProduct: IProduct = {
+export const mockedProduct: IProduct = {
   id: 1,
   title: 'Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops',
   price: 109.95,
