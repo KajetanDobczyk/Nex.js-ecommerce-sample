@@ -6,6 +6,7 @@ import { api } from 'src/api'
 import { IProduct } from 'src/modules/Product/interfaces'
 import ProductsList from 'src/modules/Products/containers/ProductsList'
 import { setProducts } from 'src/modules/Products/store/slice'
+import { getProductsFailed } from 'src/modules/Products/store/slice'
 
 type Props = {
   products: IProduct[] | null
@@ -15,7 +16,11 @@ const Home: NextPage<Props> = ({ products }) => {
   const dispatch = useDispatch()
 
   useEffect(() => {
-    dispatch(setProducts(products))
+    if (products) {
+      dispatch(setProducts(products))
+    } else {
+      dispatch(getProductsFailed())
+    }
   }, [])
 
   return <ProductsList />
@@ -37,7 +42,7 @@ export const getServerSideProps: GetServerSideProps<Props> = async (
 
     return {
       props: {
-        products: null,
+        products: [],
       },
     }
   }

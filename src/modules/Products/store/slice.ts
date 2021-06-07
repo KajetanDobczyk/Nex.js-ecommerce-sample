@@ -8,13 +8,17 @@ const products = createSlice({
   name: 'products',
   initialState,
   reducers: {
-    setProducts(state, action: PayloadAction<IProduct[] | null>) {
+    setProducts(state, action: PayloadAction<IProduct[]>) {
       state.data = action.payload
-      state.fetchStatus = action.payload ? 'succeeded' : 'failed'
+      state.fetchStatus = 'succeeded'
+    },
+    getProductsFailed(state) {
+      state.data = []
+      state.fetchStatus = 'failed'
     },
   },
 })
 
-export const { setProducts } = products.actions
+export const { setProducts, getProductsFailed } = products.actions
 
 export default products.reducer
