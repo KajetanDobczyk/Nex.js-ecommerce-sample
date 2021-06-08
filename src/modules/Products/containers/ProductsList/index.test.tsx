@@ -1,4 +1,4 @@
-import { getByRole, screen } from '@testing-library/dom'
+import { screen } from '@testing-library/dom'
 import store from 'src/config/redux/store'
 import userEvent from '@testing-library/user-event'
 
@@ -8,7 +8,7 @@ import ProductsList from '.'
 import { mockedProducts } from '../../mocks'
 import { setProducts } from '../../store/slice'
 
-describe('Products list', () => {
+describe('ProductsList', () => {
   test('Clicking the list / grid buttons changes list display mode', () => {
     renderWithProviders(<ProductsList />)
     store.dispatch(setProducts(mockedProducts))
