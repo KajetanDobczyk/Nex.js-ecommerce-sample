@@ -21,9 +21,5 @@ describe('ProductDetails', () => {
     expect(
       screen.getByRole('img', { name: mockedProduct.title }),
     ).toBeInTheDocument()
-    expect(screen.getByRole('link')).toHaveAttribute(
-      'href',
-      `/products/${mockedProduct.id}/`,
-    )
   })
 })

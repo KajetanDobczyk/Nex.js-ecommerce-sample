@@ -1,16 +1,30 @@
 import { GetStaticProps, NextPage } from 'next'
+import { useEffect } from 'react'
+import { useDispatch } from 'react-redux'
 
 import { api } from 'src/api'
 import Layout from 'src/layout'
 import { IProduct } from 'src/modules/Product/interfaces'
+import ProductDetails from 'src/modules/Product/containers/ProductDetails'
+import { setProduct } from 'src/modules/Product/store/slice'
 
 type Props = {
   product: IProduct
 }
 
-const Product: NextPage<Props> = ({ product }) => (
-  <Layout title={product.title}>Product page</Layout>
-)
+const Product: NextPage<Props> = ({ product }) => {
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+    dispatch(setProduct(product))
+  }, [])
+
+  return (
+    <Layout title={product.title}>
+      <ProductDetails />
+    </Layout>
+  )
+}
 
 export const getStaticPaths = async () => {
   const products = await api.products.getProducts()
