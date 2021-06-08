@@ -20,7 +20,7 @@ const Product: NextPage<Props> = ({ product }) => {
   }, [])
 
   return (
-    <Layout title={product.title}>
+    <Layout title={product.title} showBreadcrumbs>
       <ProductDetails />
     </Layout>
   )
