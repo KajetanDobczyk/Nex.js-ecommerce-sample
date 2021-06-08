@@ -45,7 +45,7 @@ const ProductDetails = () => {
           disabled={isProductInCart.wishlist}
           onClick={addToCart('wishlist')}
         >
-          {isProductInCart.wishlist ? 'Already in wishlist' : 'Add to Wishlist'}
+          {isProductInCart.wishlist ? 'Already in Wishlist' : 'Add to Wishlist'}
         </button>
         <button
           disabled={isProductInCart.shoppingBag}
