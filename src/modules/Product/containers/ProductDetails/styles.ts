@@ -37,3 +37,32 @@ export const ProductPrice = styled.span`
   font-weight: ${theme.font.weight.medium};
   margin-bottom: 20px;
 `
+
+export const CartButtons = styled.div`
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+
+  button {
+    background: none;
+    border: 1px solid ${theme.color.black};
+    padding: 5px 15px;
+    text-transform: uppercase;
+    transition: color 0.2s;
+    cursor: pointer;
+
+    &:not(:last-of-type) {
+      margin-right: 10px;
+    }
+
+    &:hover {
+      color: ${theme.color.grey[400]};
+    }
+    &:focus {
+      outline: none;
+    }
+    &:disabled {
+      pointer-events: none;
+    }
+  }
+`
