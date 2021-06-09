@@ -35,3 +35,12 @@ export const Logo = styled.div`
     margin-left: 20px;
   }
 `
+
+export const Right = styled.div`
+  display: flex;
+  font-size: ${theme.font.size.xs};
+
+  ${theme.media.xs} {
+    font-size: ${theme.font.size.sm};
+  }
+`
