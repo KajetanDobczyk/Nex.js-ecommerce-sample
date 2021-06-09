@@ -9,6 +9,7 @@ export const Header = styled.header`
   width: 100%;
   border-bottom: 1px solid black;
   display: flex;
+  justify-content: space-between;
   align-items: center;
   background-color: ${theme.color.black};
   color: ${theme.color.white};
@@ -33,14 +34,5 @@ export const Logo = styled.div`
   span {
     display: inline-block;
     margin-left: 20px;
-  }
-`
-
-export const Right = styled.div`
-  display: flex;
-  font-size: ${theme.font.size.xs};
-
-  ${theme.media.xs} {
-    font-size: ${theme.font.size.sm};
   }
 `

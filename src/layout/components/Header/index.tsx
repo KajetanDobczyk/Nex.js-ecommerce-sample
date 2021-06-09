@@ -8,9 +8,7 @@ const Header = () => (
       <img src="/logo.svg" />
       <span>Next E-Commerce Sample</span>
     </S.Logo>
-    <S.Right>
-      <CartLabel />
-    </S.Right>
+    <CartLabel />
   </S.Header>
 )
 
